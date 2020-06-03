@@ -1,2 +1,2 @@
-# 20185281	 Seho Kim
+# 2018xxxx	 Seho Kim
 # Kookmin Univ. SW
