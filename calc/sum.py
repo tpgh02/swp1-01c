@@ -11,20 +11,28 @@ def application(environ, start_response):
     x = ''
     y = ''
 
+    if a == '' or b == '':
+        response_body = html % {
+            'x' : 'Please Enter the Value',
+            'y' : 'Please Enter the Value',
+            'a' : a,
+            'b' : b
+        }
 
-    if '' not in [a, b]:
-        a, b = int(a), int(b)
-        global x 
-	global y
-        x = a + b
-        y = a * b
+    else:
+        if '' not in [a, b]:
+            a, b = int(a), int(b)
+            global x 
+            global y
+            x = a + b
+            y = a * b
 
-    response_body = html % {
-         'x' : x,
-         'y' : y,
-	 'a' : a,
-	 'b' : b 
-    }
+        response_body = html % {
+             'x' : x,
+             'y' : y,
+	     'a' : a,
+	     'b' : b 
+        }
     start_response('200 OK', [
         ('Content-Type', 'text/html'),
         ('Content-Length', str(len(response_body)))
